@@ -1,0 +1,417 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IStore</name>
+    </assembly>
+    <members>
+        <member name="T:IStore.EmailService">
+            <summary>
+            Класс EmailService для работы с службами электронной почты
+            </summary>
+        </member>
+        <member name="M:IStore.EmailService.SendAsync(Microsoft.AspNet.Identity.IdentityMessage)">
+            <summary>
+            Метод SendAsync подключает службу электронной почты к приложению
+            </summary>
+            <param name="message">Сообщение которое нужно отправить</param>
+            <returns></returns>
+        </member>
+        <member name="T:IStore.SmsService">
+            <summary>
+            Класс SmsService для работы с службой SMS
+            </summary>
+        </member>
+        <member name="M:IStore.SmsService.SendAsync(Microsoft.AspNet.Identity.IdentityMessage)">
+            <summary>
+            Метод SendAsync подключает службу SMS
+            </summary>
+            <param name="message">>Сообщение которое нужно отправить</param>
+            <returns></returns>
+        </member>
+        <member name="T:IStore.ApplicationUserManager">
+            <summary>
+            Класс ApplicationUserManager производит настройку диспетчера пользователей приложения. 
+            UserManager определяется в ASP.NET Identity и используется приложением.
+            </summary>
+        </member>
+        <member name="M:IStore.ApplicationUserManager.#ctor(Microsoft.AspNet.Identity.IUserStore{IStore.Models.ApplicationUser})">
+            <summary>
+            Конструктор класса
+            </summary>
+            <param name="store"></param>
+        </member>
+        <member name="M:IStore.ApplicationUserManager.Create(Microsoft.AspNet.Identity.Owin.IdentityFactoryOptions{IStore.ApplicationUserManager},Microsoft.Owin.IOwinContext)">
+            <summary>
+            Метод Create
+            </summary>
+            <param name="options"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IStore.ApplicationSignInManager">
+            <summary>
+            Класс ApplicationSignInManager производит настройку диспетчера входа для приложения.
+            </summary>
+        </member>
+        <member name="M:IStore.ApplicationSignInManager.#ctor(IStore.ApplicationUserManager,Microsoft.Owin.Security.IAuthenticationManager)">
+            <summary>
+            
+            </summary>
+            <param name="userManager"></param>
+            <param name="authenticationManager"></param>
+        </member>
+        <member name="M:IStore.ApplicationSignInManager.CreateUserIdentityAsync(IStore.Models.ApplicationUser)">
+            <summary>
+            
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IStore.ApplicationSignInManager.Create(Microsoft.AspNet.Identity.Owin.IdentityFactoryOptions{IStore.ApplicationSignInManager},Microsoft.Owin.IOwinContext)">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IStore.RouteConfig">
+            <summary>
+            Класс RouteConfig для работы и построения маршрутов приложения
+            </summary>
+        </member>
+        <member name="M:IStore.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            Метод RegisterRoutes для работы с маршрутами приложения
+            </summary>
+            <param name="routes">Колекция маршрутов</param>
+        </member>
+        <member name="M:IStore.Startup.ConfigureAuth(Owin.IAppBuilder)">
+            <summary>
+            Метод ConfigureAuth отвечает за настройку входа в приложение
+            </summary>
+            <param name="app">Экземпляр приложения</param>
+        </member>
+        <member name="T:IStore.Controllers.AccountController">
+            <summary>
+            Класс AccountController предоставляет логику для регистрации и авторизациии пользувателей
+            </summary>
+        </member>
+        <member name="M:IStore.Controllers.AccountController.#ctor">
+            <summary>
+            Конструктор класса для доступа к открытым членам класса
+            </summary>
+        </member>
+        <member name="M:IStore.Controllers.AccountController.#ctor(IStore.ApplicationUserManager,IStore.ApplicationSignInManager)">
+            <summary>
+            Конструктор класса для доступа к открытым членам класса
+            </summary>
+            <param name="userManager"></param>
+            <param name="signInManager"></param>
+        </member>
+        <member name="P:IStore.Controllers.AccountController.SignInManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IStore.Controllers.AccountController.UserManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IStore.Controllers.AccountController.Dispose(System.Boolean)">
+            <summary>
+            Метод Dispose отвечает за очистку управляемых и неуправляемых ресурсов
+            </summary>
+            <param name="disposing">Указывает какие ресурсы нужно очистить,
+            true - управляемые и неуправляемые ресуры,
+            false - неуправляемые ресуры.</param>
+        </member>
+        <member name="M:IStore.Controllers.CoursesController.Index">
+            <summary>
+            Метод Index выдает список доступных курсов
+            </summary>
+            <returns>Возращает представление Views/Courses/Index</returns>
+        </member>
+        <member name="M:IStore.Controllers.CoursesController.CSharp">
+            <summary>
+            Метод CSharp выдает курс по програмированию на языке C#
+            </summary>
+            <returns>Возращает представление Views/Courses/CSharp</returns>
+        </member>
+        <member name="M:IStore.Controllers.CoursesController.CSS">
+            <summary>
+            Метод CSS выдает курс по програмированию на языке - стилей CSS
+            </summary>
+            <returns>Возращает представление Views/Courses/CSS</returns>
+        </member>
+        <member name="M:IStore.Controllers.CoursesController.FSharp">
+            <summary>
+            Метод FSharp выдает курс по програмированию на языке F#
+            </summary>
+            <returns>Возращает представление Views/Courses/FSharp</returns>
+        </member>
+        <member name="M:IStore.Controllers.CoursesController.Html">
+            <summary>
+            Метод Html выдает курс по програмированию на языке - разметки HTML
+            </summary>
+            <returns>Возращает представление Views/Courses/Html</returns>
+        </member>
+        <member name="M:IStore.Controllers.CoursesController.Java">
+            <summary>
+            Метод Java выдает курс по програмированию на языке Java
+            </summary>
+            <returns>Возращает представление Views/Courses/Java</returns>
+        </member>
+        <member name="M:IStore.Controllers.CoursesController.JavaScript">
+            <summary>
+            Метод JavaScript выдает курс по програмированию на языке JavaScript
+            </summary>
+            <returns>Возращает представление Views/Courses/JavaScript</returns>
+        </member>
+        <member name="M:IStore.Controllers.CoursesController.SQL">
+            <summary>
+            Метод SQL выдает курс по програмированию на языке SQL
+            </summary>
+            <returns>Возращает представление Views/Courses/SQL</returns>
+        </member>
+        <member name="M:IStore.Controllers.CoursesController.TypeScript">
+            <summary>
+            Метод TypeScript выдает курс по програмированию на языке TypeScript
+            </summary>
+            <returns>Возращает представление Views/Courses/TypeScript</returns>
+        </member>
+        <member name="M:IStore.Controllers.HomeController.Basket">
+            <summary>
+            Метод Basket представляет корзину пользувателя
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IStore.Controllers.ManageController.AddPhoneNumber(System.String)">
+            <summary>
+            Метод AddPhoneNumber инициализирует представления добавления номера телефона в БД
+            </summary>
+            <returns>Возращает представления Views/Manage/AddPhoneNumber</returns>
+        </member>
+        <member name="M:IStore.Controllers.ManageController.AddPhoneNumber(IStore.Models.Manage.AddPhoneNumberModel)">
+            <summary>
+            Метод AddPhoneNumber получает из представления Views/Manage/AddPhoneNumber номер телефона,
+            верифицирует его и записывает его в БД
+            </summary>
+            <param name="model">Результат из представления Views/Manage/AddPhoneNumber</param>
+            <returns>Отправляет номер телефона на верификацию</returns>
+        </member>
+        <member name="M:IStore.Controllers.ManageController.EnableTwoFactorAuthentication">
+            <summary>
+            Метод EnableTwoFactorAuthentication инициализирует включение двух факторной аудентификации
+            </summary>
+            <returns>
+            Включение двух факторной аудентификации в представление Views/Manage/Index
+            </returns>
+        </member>
+        <member name="M:IStore.Controllers.ManageController.DisableTwoFactorAuthentication">
+            <summary>
+            Метод DisableTwoFactorAuthentication инициализирует отключение двух факторной аудентификации
+            </summary>
+            <returns>
+            Отключение двух факторной аудентификации в представление Views/Manage/Index
+            </returns>
+        </member>
+        <member name="M:IStore.Controllers.ManageController.VerifyPhoneNumber(IStore.Models.Manage.VerifyPhoneNumberModel)">
+            <summary>
+            Метод VerifyPhoneNumber производит верификацию номера телефона
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IStore.Models.ExternalLoginConfirmationViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.SendCodeViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.VerifyCodeViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.ForgotViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.ResetPasswordViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.Account.ExternalLoginConfirmationModel">
+            <summary>
+            Класс ExternalLoginConfirmationModel 
+            </summary>
+        </member>
+        <member name="T:IStore.Models.Account.ForgotPasswordModel">
+            <summary>
+            Класс ForgotPasswordModel получает адресс эл. почты для сброса пароля
+            </summary>
+        </member>
+        <member name="T:IStore.Models.Account.LoginListModel">
+            <summary>
+            Класс LoginListModel получает ссылку авторизированного пользувателя
+            </summary>
+        </member>
+        <member name="T:IStore.Models.Account.LoginModel">
+            <summary>
+             Класс LoginModel предоставляет логику для авторизации пользувателя
+            </summary>
+        </member>
+        <member name="T:IStore.Models.Account.RegisterModel">
+            <summary>
+            Класс RegisterViewModel предоставляет логику для регистрации пользувателя
+            </summary>
+        </member>
+        <member name="P:IStore.Models.Account.RegisterModel.Email">
+            <summary>
+            Свойство Email хранит адрес эл. почты пользувателя
+            </summary>
+        </member>
+        <member name="P:IStore.Models.Account.RegisterModel.Password">
+            <summary>
+            Свойство Password хранит пароль пользувателя
+            </summary>
+        </member>
+        <member name="P:IStore.Models.Account.RegisterModel.ConfirmPassword">
+            <summary>
+            Свойство ConfirmPassword подтверждает пароль пользувателя
+            </summary>
+        </member>
+        <member name="T:IStore.Models.ApplicationUser">
+            <summary>
+            Класс ApplicationUser для работы с пользувателями в БД
+            </summary>
+        </member>
+        <member name="M:IStore.Models.ApplicationUser.GenerateUserIdentityAsync(Microsoft.AspNet.Identity.UserManager{IStore.Models.ApplicationUser})">
+            <summary>
+            Метод GenerateUserIdentityAsync записывает в БД
+            </summary>
+            <param name="manager"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IStore.Models.ApplicationDbContext">
+            <summary>
+            Класс ApplicationDbContext инициализирует подключение к базе данных
+            </summary>
+        </member>
+        <member name="M:IStore.Models.ApplicationDbContext.#ctor">
+            <summary>
+            Инициализация подключения к БД
+            </summary>
+        </member>
+        <member name="M:IStore.Models.ApplicationDbContext.Create">
+            <summary>
+            Метод Create создает сеанс связи с БД
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:IStore.Models.IndexViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.ManageLoginsViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.FactorViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.SetPasswordViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.ChangePasswordViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.ConfigureTwoFactorViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IStore.Models.Manage.AddPhoneNumberModel">
+            <summary>
+            Класс AddPhoneNumberModel инициализирует номер телефона
+            </summary>
+        </member>
+        <member name="T:IStore.Models.Manage.VerifyPhoneNumberModel">
+            <summary>
+            Класс VerifyPhoneNumberModel инициализирует верификацию номера телефона
+            </summary>
+        </member>
+        <member name="T:IStore.Models.ProductModel">
+            <summary>
+            Класс описывающий продукт
+            </summary>
+        </member>
+        <member name="P:IStore.Models.ProductModel.Id">
+            <summary>
+            Идентификатор продукта
+            </summary>
+        </member>
+        <member name="P:IStore.Models.ProductModel.Name">
+            <summary>
+            Имя продукта
+            </summary>
+        </member>
+        <member name="P:IStore.Models.ProductModel.Descriptions">
+            <summary>
+            Описания продукта
+            </summary>
+        </member>
+        <member name="P:IStore.Models.ProductModel.Price">
+            <summary>
+            Цена продукта в прайсе
+            </summary>
+        </member>
+        <member name="P:IStore.Models.ProductModel.Category">
+            <summary>
+            Категория продукта
+            </summary>
+        </member>
+        <member name="M:IStore.Models.ProductModel.#ctor">
+            <summary>
+            Конструктор для инициализации нового продукта, без параметров
+            </summary>
+        </member>
+        <member name="M:IStore.Models.ProductModel.#ctor(System.Int32,System.String,System.String,System.Decimal,System.String)">
+            <summary>
+            Конструктор для инициализации нового продукта, с параметрами
+            </summary>
+        </member>
+        <member name="T:IStore.Properties.Resources">
+            <summary>
+            Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:IStore.Properties.Resources.ResourceManager">
+            <summary>
+            Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:IStore.Properties.Resources.Culture">
+            <summary>
+            Перезаписывает свойство CurrentUICulture текущего потока для всех
+            обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+    </members>
+</doc>

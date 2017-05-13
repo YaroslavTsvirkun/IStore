@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Курсы по программированию";
+}
+
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<div>
+    <strong>Языки програмирования:</strong>
+    <ul>
+        <li>@Html.ActionLink("C#", "CSharp", "Courses")</li>
+        <li>@Html.ActionLink("F#", "FSharp", "Courses")</li>
+        <li>@Html.ActionLink("Java", "Java", "Courses")</li>
+        <li>@Html.ActionLink("HTML", "Html", "Courses")</li>
+        <li>@Html.ActionLink("CSS", "CSS", "Courses")</li>
+        <li>@Html.ActionLink("JavaScript", "JavaScript", "Courses")</li>
+        <li>@Html.ActionLink("TypeScript", "TypeScript", "Courses")</li>
+        <li>@Html.ActionLink("SQL", "SQL", "Courses")</li>
+    </ul>
+    <strong>Фреймворки:</strong>
+    <ul>
+        <li>@Html.ActionLink("Angular", "", "Courses")</li>
+        <li>@Html.ActionLink("Angular 2", "", "Courses")</li>
+        <li>@Html.ActionLink("React", "", "Courses")</li>
+        <li>@Html.ActionLink("jQuery", "", "Courses")</li>
+    </ul>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
